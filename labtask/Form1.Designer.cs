@@ -48,6 +48,7 @@ namespace labtask
             this.deletebtn = new System.Windows.Forms.Button();
             this.StudentRecordDataGridView = new System.Windows.Forms.DataGridView();
             this.resetbtn = new System.Windows.Forms.Button();
+            this.txtid = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.StudentRecordDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +74,7 @@ namespace labtask
             this.label2.Size = new System.Drawing.Size(46, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -217,8 +219,10 @@ namespace labtask
             this.StudentRecordDataGridView.Location = new System.Drawing.Point(480, 80);
             this.StudentRecordDataGridView.Name = "StudentRecordDataGridView";
             this.StudentRecordDataGridView.RowTemplate.Height = 25;
+            this.StudentRecordDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.StudentRecordDataGridView.Size = new System.Drawing.Size(412, 234);
             this.StudentRecordDataGridView.TabIndex = 17;
+            this.StudentRecordDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StudentRecordDataGridView_CellClick);
             this.StudentRecordDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // resetbtn
@@ -232,12 +236,20 @@ namespace labtask
             this.resetbtn.UseVisualStyleBackColor = true;
             this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
             // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(287, 43);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(164, 23);
+            this.txtid.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(904, 468);
+            this.Controls.Add(this.txtid);
             this.Controls.Add(this.resetbtn);
             this.Controls.Add(this.StudentRecordDataGridView);
             this.Controls.Add(this.deletebtn);
@@ -287,6 +299,7 @@ namespace labtask
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.DataGridView StudentRecordDataGridView;
         private System.Windows.Forms.Button resetbtn;
+        private System.Windows.Forms.TextBox txtid;
     }
 }
 
