@@ -48,7 +48,8 @@ namespace labtask
             this.deletebtn = new System.Windows.Forms.Button();
             this.StudentRecordDataGridView = new System.Windows.Forms.DataGridView();
             this.resetbtn = new System.Windows.Forms.Button();
-            this.txtid = new System.Windows.Forms.TextBox();
+            this.searchid = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.StudentRecordDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@ namespace labtask
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(904, 40);
+            this.label1.Size = new System.Drawing.Size(904, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Employee";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -201,6 +202,7 @@ namespace labtask
             this.Searchbtn.TabIndex = 15;
             this.Searchbtn.Text = "Search";
             this.Searchbtn.UseVisualStyleBackColor = true;
+            this.Searchbtn.Click += new System.EventHandler(this.Searchbtn_Click);
             // 
             // deletebtn
             // 
@@ -236,12 +238,23 @@ namespace labtask
             this.resetbtn.UseVisualStyleBackColor = true;
             this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
             // 
-            // txtid
+            // searchid
             // 
-            this.txtid.Location = new System.Drawing.Point(287, 43);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(164, 23);
-            this.txtid.TabIndex = 19;
+            this.searchid.AutoSize = true;
+            this.searchid.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchid.Location = new System.Drawing.Point(71, 38);
+            this.searchid.Name = "searchid";
+            this.searchid.Size = new System.Drawing.Size(71, 19);
+            this.searchid.TabIndex = 19;
+            this.searchid.Text = "Search ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(287, 38);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(164, 23);
+            this.txtID.TabIndex = 20;
+            this.txtID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
@@ -249,7 +262,8 @@ namespace labtask
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(904, 468);
-            this.Controls.Add(this.txtid);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.searchid);
             this.Controls.Add(this.resetbtn);
             this.Controls.Add(this.StudentRecordDataGridView);
             this.Controls.Add(this.deletebtn);
@@ -299,7 +313,8 @@ namespace labtask
         private System.Windows.Forms.Button deletebtn;
         private System.Windows.Forms.DataGridView StudentRecordDataGridView;
         private System.Windows.Forms.Button resetbtn;
-        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.Label searchid;
+        private System.Windows.Forms.TextBox txtID;
     }
 }
 

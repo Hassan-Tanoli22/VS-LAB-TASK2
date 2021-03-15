@@ -73,7 +73,7 @@ namespace labtask
         {
             if (StudentID > 0)
             {
-                String qry = "update employes set name= name, email=email, address=address, phonenumber=phonenumber, designation=designation ,employecode=employecode where StudentID=  '"+txtid.Text +"'";
+                String qry = "update employes set name= '"+etxtname.Text+"', email='"+etxtemail.Text+"', address='"+etxtaddress.Text+"', phonenumber='"+etxtphonenumber.Text+"', designation='"+etxtdesignation.Text+"' ,employecode='"+etxtemployecode.Text+"' where StudentID=  '"+this.StudentID+"'";
 
 
 
@@ -93,7 +93,24 @@ namespace labtask
 
         private void deletebtn_Click(object sender, EventArgs e)
         {
+            if (StudentID > 0)
+            {
+                String qry = "Delete from employes  where StudentID=  '" + this.StudentID + "'";
 
+
+
+
+
+                if (db.UDI(qry))
+                {
+                    MessageBox.Show("Data Deleted");
+                }
+                else
+                {
+                    MessageBox.Show("Data not Deleted");
+                }
+                GetStudentRecord();
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -114,6 +131,7 @@ namespace labtask
 
         private void ResetFormControl()
         {
+            StudentID = 0;
             etxtname.Clear();
             etxtemail.Clear();
             etxtaddress.Clear();
@@ -124,7 +142,7 @@ namespace labtask
 
         private void StudentRecordDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            StudentID = Convert.ToInt32(StudentRecordDataGridView.Rows[0].Cells[0].Value);
+            StudentID = Convert.ToInt32(StudentRecordDataGridView.SelectedRows[0].Cells[0].Value);
 
             etxtname.Text = StudentRecordDataGridView.SelectedRows[0].Cells[1].Value.ToString();
             etxtemail.Text = StudentRecordDataGridView.SelectedRows[0].Cells[2].Value.ToString();
@@ -142,6 +160,30 @@ namespace labtask
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Searchbtn_Click(object sender, EventArgs e)
+        {
+            string qry = "Select * from employes where StudentID='" + txtID.Text + "'";
+            DataTable dt = db.Search(qry);
+            if (dt != null)
+            {
+                etxtname.Text = dt.Rows[0]["name"].ToString();
+                etxtemail.Text = dt.Rows[0]["email"].ToString();
+                etxtaddress.Text = dt.Rows[0]["address"].ToString();
+                etxtphonenumber.Text = dt.Rows[0]["phonenumber"].ToString();
+                etxtdesignation.Text = dt.Rows[0]["designation"].ToString();
+                etxtemployecode.Text = dt.Rows[0]["employecode"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Record not found");
+            }
         }
     }
 }
