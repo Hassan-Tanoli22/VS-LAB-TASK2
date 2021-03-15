@@ -20,3 +20,4 @@ C:\Users\hassa\source\repos\labtask\labtask\obj\Debug\netcoreapp3.1\labtask.cspr
 C:\Users\hassa\source\repos\labtask\labtask\obj\Debug\netcoreapp3.1\labtask.dll
 C:\Users\hassa\source\repos\labtask\labtask\obj\Debug\netcoreapp3.1\labtask.pdb
 C:\Users\hassa\source\repos\labtask\labtask\obj\Debug\netcoreapp3.1\labtask.genruntimeconfig.cache
+C:\Users\hassa\source\repos\labtask\labtask\obj\Debug\netcoreapp3.1\labtask.Products.resources

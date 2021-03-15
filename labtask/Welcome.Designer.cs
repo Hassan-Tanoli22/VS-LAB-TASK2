@@ -1,7 +1,7 @@
 ﻿
 namespace labtask
 {
-    partial class Products
+    partial class Welcome
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,10 @@ namespace labtask
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Products
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 649);
-            this.Name = "Products";
-            this.Text = "Products";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Welcome";
         }
 
         #endregion
